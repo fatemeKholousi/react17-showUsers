@@ -1,35 +1,31 @@
 import React,{useState} from 'react'
+import Table from "@material-ui/core/Table";
+import TableHead from "@material-ui/core/TableHead";
+import EachProfile from './EachProfile';
+import "./index.css";
 
 
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
-import Demo from "./Demo";
-import LoadingComponent from "./LoadingComponent";
-import { CircularProgress } from "@material-ui/core";
-import EachProfile from './EachProfile';
 
 
 function TableProfiles(props) {
 
-    const useStyles = makeStyles({
-        table: {
-          minWidth: 800,
-          
-        },
-        celll:{
-            margin:400,
-
-        }
-      });
     return (
-    <span>
+    <span >
+   
+    {/* show is related to onClick on my one source of truth */}
       {props.show==true ?
+      /**
+       * 
+       * 
+       * it's second time I call EachProfile things as props
+       * 
+       * 
+       */
         <EachProfile
         avatar={props.avatar}
         name={props.name}
@@ -39,18 +35,21 @@ function TableProfiles(props) {
         id={props.id}
         corporation={props.corporation}
       />
-  
+
        :
-        <TableContainer>
-        <Table className={useStyles.table}>
-            <TableBody>
-            <TableCell className={useStyles.celll}>
+       /**
+        *
+        * 
+        *  I want to get information as a card call profile(that's Demo in this project)
+        * 
+        * 
+        */
+       <TableBody>
+              <TableCell >
               {props.profile}
-            </TableCell>
-            </TableBody>
-        </Table>
-      </TableContainer>
-   }</span>
+              </TableCell></TableBody>
+   }
+   </span>
     )
 }
 

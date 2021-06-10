@@ -1,8 +1,10 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
+
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
-
+import Button from '@material-ui/core/Button';
 function EachProfile(props) {
     return (
         <form className="eachprofile--container" noValidate autoComplete="off">
@@ -17,6 +19,8 @@ function EachProfile(props) {
         <TextField className="eachprofile--txt--input" value={props.phone} label="Phone Number" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
         <TextField className="eachprofile--txt--input" value={props.corporation} autoFocus label="Corporation" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
         </Box>
+     
+        {/* <NavLink exact className="view" to="/">بازگشت</NavLink> */}
       </form>
     )
 }

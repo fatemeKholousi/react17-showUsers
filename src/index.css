@@ -3,14 +3,10 @@
   box-sizing: border-box;
   padding: 0;
 }
-table {
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: azure;
+body {
+  background: linear-gradient(to bottom, #9999ff 0%, #ccccff 100%);
 }
+
 .avatar {
   border-radius: 50px;
 }

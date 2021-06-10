@@ -1,23 +1,19 @@
 // https://codesandbox.io/s/xv6wozqjmw?file=/src/components/userCards.js
 import React, { useEffect, useState } from "react";
-import "./App.css";
-import { withStyles, makeStyles } from "@material-ui/core/styles";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableContainer from "@material-ui/core/TableContainer";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-import Paper from "@material-ui/core/Paper";
+import "./index.css";
 import Demo from "./Demo";
-import LoadingComponent from "./LoadingComponent";
-import { CircularProgress } from "@material-ui/core";
 import TableProfiles from "./TableProfiles";
-import TransitionsModal from "./ModalProfile";
+import LoadingComponent from "./LoadingComponent";
+import { Box } from "@material-ui/core";
 import EachProfile from "./EachProfile";
 import { Router, Route, Switch, Link } from "react-router";
 import { NavLink } from "react-router-dom";
 function App() {
+  <Switch>
+    <Route path="/profile" exact component={EachProfile} />
+    <Route path="/" exact component={App} />
+  </Switch>;
+
   const [dataUser, setDataUser] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showList, setShowList] = useState(false);
@@ -31,9 +27,9 @@ function App() {
     id: "undefined",
     avatar: "undefined",
   });
-  const [userProfileInformation, setUserProfileInformation] = useState({});
   // fetch API user mock
   //I'll get every thing and put it into dataUser
+
   const fetchUser = async () => {
     const response = await fetch(
       " https://60bcc600b8ab37001759fa69.mockapi.io/users/v1/users"
@@ -49,26 +45,22 @@ function App() {
   }, []);
 
   //just make sure I get right information
-  console.log(dataUser);
-
-  console.log("===========");
-  console.log(userNameSaver);
-  console.log("===========");
+  // console.log(dataUser);
+  // console.log("===========");
+  // console.log(userNameSaver);
+  // console.log("===========");
 
   return (
     <div>
-      illa illa
-      {/* <NavLink exact activeClassName="activeLink" to="/EachProfile">
-        برو به پروفایل/
-      </NavLink>
-      <NavLink exact activeClassName="activeLink" to="/">
-        صفحه اصلی/
-      </NavLink> */}
-      <TransitionsModal />
       {loading ? (
         <LoadingComponent loading={loading} />
       ) : (
-        <span>
+        <Box
+          display="flex"
+          flexDirection="row"
+          justifyContent="center"
+          alignItems="center"
+        >
           <TableProfiles
             name={userNameSaver.name}
             lastName={userNameSaver.lastName}
@@ -98,7 +90,7 @@ function App() {
               />
             ))}
           />
-        </span>
+        </Box>
       )}
     </div>
   );

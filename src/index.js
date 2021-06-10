@@ -4,7 +4,6 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import EachProfile from "./EachProfile";
 
 ReactDOM.render(
   <React.StrictMode>
