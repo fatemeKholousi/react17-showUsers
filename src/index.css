@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+table {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: azure;
+}
+.avatar {
+  border-radius: 50px;
+}
+.eachRow {
+  border-bottom: solid 3px rgb(35, 235, 235);
+  margin-bottom: 50px;
+  background-color: rgb(213, 249, 249);
+  padding: 20px;
+}
+.eachprofile--container {
+  background-image: url("https://raw.githubusercontent.com/palgramming/Frontend_Mentor_Challenges/master/intro_component_with_signup_form/bg-intro-desktop.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.eachprofile--img {
+  padding: 10px;
+  margin-bottom: 50px;
+  width: 200px;
+  border: 5px solid rgb(107, 107, 212, 0.5);
+  border-radius: 50%;
+}
