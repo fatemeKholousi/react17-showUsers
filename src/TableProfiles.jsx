@@ -32,7 +32,7 @@ function TableProfiles(props) {
         lastName={props.lastName}
         email={props.email}
         phone={props.phone}
-        id={props.id}
+        useName={props.userName}
         corporation={props.corporation}
       />
 

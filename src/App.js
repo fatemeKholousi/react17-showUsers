@@ -89,7 +89,7 @@ function App() {
             lastName={userNameSaver.lastName}
             email={userNameSaver.email}
             phone={userNameSaver.phone}
-            id={userNameSaver.id}
+            userName={userNameSaver.username}
             corporation={userNameSaver.corporation}
             avatar={userNameSaver.avatar}
             show={showList}

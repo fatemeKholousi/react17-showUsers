@@ -14,7 +14,7 @@ function EachProfile(props) {
         <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
         <TextField className="eachprofile--txt--input" value={props.name} label="name" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
         <TextField className="eachprofile--txt--input" value={props.lastName} label="lastname" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
-        <TextField className="eachprofile--txt--input" value={props.id} label="ID" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
+        <TextField className="eachprofile--txt--input" value={props.useName} label="User Name" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
         <TextField className="eachprofile--txt--input" value={props.email} label="E-mail" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
         <TextField className="eachprofile--txt--input" value={props.phone} label="Phone Number" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
         <TextField className="eachprofile--txt--input" value={props.corporation} autoFocus label="Corporation" variant="outlined" style={{width:'200px',marginBottom:'30px'}} />
