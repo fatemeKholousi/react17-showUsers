@@ -4,16 +4,16 @@ import "./index.css";
 import Demo from "./Demo";
 import TableProfiles from "./TableProfiles";
 import LoadingComponent from "./LoadingComponent";
-import { Box } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 import EachProfile from "./EachProfile";
 import { Router, Route, Switch, Link } from "react-router";
 import { NavLink } from "react-router-dom";
-function App() {
-  <Switch>
-    <Route path="/profile" exact component={EachProfile} />
-    <Route path="/" exact component={App} />
-  </Switch>;
+import {
+  NotificationContainer,
+  NotificationManager,
+} from "react-notifications";
 
+function App() {
   const [dataUser, setDataUser] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showList, setShowList] = useState(false);
@@ -29,7 +29,28 @@ function App() {
   });
   // fetch API user mock
   //I'll get every thing and put it into dataUser
-
+  const createNotification = (type) => {
+    switch (type) {
+      case "info":
+        NotificationManager.info("Info message");
+        break;
+      case "success":
+        NotificationManager.success("Success message", "Title here");
+        break;
+      case "warning":
+        NotificationManager.warning(
+          "Warning message",
+          "Close after 3000ms",
+          3000
+        );
+        break;
+      case "error":
+        NotificationManager.error("Error message", "Click me!", 5000, () => {
+          alert("callback");
+        });
+        break;
+    }
+  };
   const fetchUser = async () => {
     const response = await fetch(
       " https://60bcc600b8ab37001759fa69.mockapi.io/users/v1/users"
@@ -52,6 +73,8 @@ function App() {
 
   return (
     <div>
+      {/* <button onClick={NotificationManager.info("Info message")}>دکمه</button>{" "}
+      <NotificationContainer />; */}
       {loading ? (
         <LoadingComponent loading={loading} />
       ) : (
